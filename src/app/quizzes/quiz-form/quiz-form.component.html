@@ -1,12 +1,25 @@
 <div class="card">
+
   <h2>Create a new Quiz</h2>
+
   <form class="quiz-form" [formGroup]="quizForm">
-    <label for="title">
+
+    <label for="theme">
+      Theme <br>
+      <select *ngFor="let theme of Them" class="input-custom" id="theme" [formControlName]="'theme'">
+        <option [value]="theme">{{theme}}</option>
+      </select>
+    </label>
+    <br>
+
+    <label for="name">
       Title <br>
       <input class="input-custom" type="text" id="name" [formControlName]="'name'">
     </label>
     <br>
+
     <button type="submit" class="button-card" (click)="addQuiz()">Create</button>
+
   </form>
 </div>
 <!-- Uncomment below to see your form structure and how it changes-->
